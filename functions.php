@@ -3,6 +3,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+/**
+ * cherry_core_base_url fix for Bedrock path
+ */
+add_filter('cherry_core_base_url', function ($url) {
+    return str_replace(WP_CONTENT_DIR, '/../app', $url);
+});
+
 // Set up theme support
 function elementor_hello_theme_setup() {
 
