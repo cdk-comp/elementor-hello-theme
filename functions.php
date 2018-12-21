@@ -36,6 +36,24 @@ function elementor_hello_theme_setup() {
 }
 add_action( 'after_setup_theme', 'elementor_hello_theme_setup' );
 
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function elementor_hello_theme_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'elementor-hello-theme' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'elementor-hello-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'elementor_hello_theme_widgets_init' );
+
 // Theme Scripts & Styles
 function elementor_hello_theme_scripts_styles() {
 	wp_enqueue_style( 'elementor-hello-theme-style', get_stylesheet_uri() );
