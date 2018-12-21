@@ -28,6 +28,11 @@ function elementor_hello_theme_setup() {
 	add_theme_support( 'woocommerce' );
 
 	load_theme_textdomain( 'elementor-hello-theme', get_template_directory() . '/languages' );
+	
+	// Register wp_nav_menu() location.
+	register_nav_menus( array(
+		'menu-1' => esc_html__( 'Primary', 'elementor-hello-theme' ),
+	) );	
 }
 add_action( 'after_setup_theme', 'elementor_hello_theme_setup' );
 
