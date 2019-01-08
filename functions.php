@@ -27,6 +27,11 @@ function elementor_hello_theme_setup() {
 
 	add_theme_support( 'woocommerce' );
 
+	// Register wp_nav_menu() location.
+	register_nav_menus( array(
+		'menu-1' => esc_html__( 'Primary', 'elementor-hello-theme' ),
+	) );
+
 	load_theme_textdomain( 'elementor-hello-theme', get_template_directory() . '/languages' );
 	
 	// Register wp_nav_menu() location.
