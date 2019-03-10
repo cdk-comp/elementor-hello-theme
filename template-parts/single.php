@@ -7,9 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <main id="main" class="site-main" role="main">
 
-	<header class="page-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header>
+    <?php do_action( 'elementor_hello_theme_header_title' ); ?>
 
 	<div class="page-content">
 		<?php the_content(); ?>
