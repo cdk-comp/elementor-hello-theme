@@ -86,7 +86,7 @@ add_action( 'elementor_hello_theme_footer', 'elementor_hello_theme_footer_templa
 // Google Tag Manager head including
 function elementor_hello_theme_gtm_head() {
 
-	if ( defined( 'WP_GTM' ) ) { ?>
+	if ( defined( 'WP_GTM' ) && WP_GTM != '' ) { ?>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -102,7 +102,7 @@ add_action( 'wp_head', 'elementor_hello_theme_gtm_head', 1 );
 // Google Tag Manager body including
 function elementor_hello_theme_gtm_body() {
 
-	if ( defined( 'WP_GTM' ) && WP_GTM !== '' ) { ?>
+	if ( defined( 'WP_GTM' ) && WP_GTM != '' ) { ?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo WP_GTM; ?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
