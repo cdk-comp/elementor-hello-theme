@@ -59,6 +59,18 @@ function elementor_hello_theme_header_template() {
 }
 add_action( 'elementor_hello_theme_header', 'elementor_hello_theme_header_template' );
 
+// Header title template
+function elementor_hello_theme_header_title_template() {
+
+	if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( 'header' ) ) {
+		return;
+	}
+
+	get_template_part( 'template-parts/header-title' );
+
+}
+add_action( 'elementor_hello_theme_header_title', 'elementor_hello_theme_header_title_template' );
+
 // Footer template
 function elementor_hello_theme_footer_template() {
 
@@ -90,7 +102,7 @@ add_action( 'wp_head', 'elementor_hello_theme_gtm_head', 1 );
 // Google Tag Manager body including
 function elementor_hello_theme_gtm_body() {
 
-	if ( defined( 'WP_GTM' ) ) { ?>
+	if ( defined( 'WP_GTM' ) && WP_GTM !== '' ) { ?>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo WP_GTM; ?>"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
