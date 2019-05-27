@@ -136,7 +136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 add_action( 'elementor_hello_theme_header', 'elementor_hello_theme_gtm_body', 1 );
 
 // cherry_core_base_url fix for Bedrock path
-add_filter('cherry_core_base_url', function ($url) {
+add_filter('cx_include_module_url', function ($url) {
     if ( defined( 'CDK_CUSTOM' ) ) {	
         return str_replace(WP_CONTENT_DIR, '/../app', $url);
     } else {
